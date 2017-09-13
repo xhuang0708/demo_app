@@ -34,6 +34,7 @@ gem 'bootstrap-sass'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
+gem 'rails-ujs'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
