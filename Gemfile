@@ -35,6 +35,9 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'rails-ujs'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
