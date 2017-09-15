@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :destroy]
-  before_action :signed_in_user, only: [:index, :show, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
@@ -13,6 +12,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   # GET /users/new
@@ -66,13 +66,6 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
-
-    def signed_in_user
-      unless signed_in?
-        store_location
-        redirect_to signin_path, notice: "Please sign in." 
-      end
     end
 
     def correct_user
